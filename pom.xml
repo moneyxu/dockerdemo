@@ -8,6 +8,8 @@
     <artifactId>dockerdemo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -37,21 +39,10 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.5</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <warName>${project.artifactId}-${project.version}</warName>
-                    <webResources>
-                        <resource>
-                            <directory>web</directory>
-                            <includes>
-                                <include>*.*</include>
-                                <include>**/*.*</include>
-                            </includes>
-                            <filtering>true</filtering>
-                        </resource>
-                    </webResources>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
             <plugin>
